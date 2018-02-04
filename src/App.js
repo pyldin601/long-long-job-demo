@@ -7,16 +7,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      counter: 0,
+      n: 0,
+      fib: 0,
     };
   }
 
   componentDidMount() {
-    counterJob.on('task', (cursor, counter) => {
-      this.setState({ counter })
+    counterJob.on('task', (cursor, { fib, n }) => {
+      this.setState({ fib, n })
     });
 
-    counterJob.start(0);
+    counterJob.start({});
   }
 
   render() {
@@ -27,7 +28,7 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          {this.state.counter}
+          fib({this.state.n}) = {this.state.fib.toFixed()}
         </p>
       </div>
     );
