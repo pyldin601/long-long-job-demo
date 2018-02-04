@@ -3,8 +3,5 @@ import { repeat } from 'long-long-job';
 import timeout from 'timeout-then';
 
 export default new LongLongJob('counter', [
-  async value => {
-    await timeout(500);
-    return repeat(value + 1);
-  },
+  value => timeout(500).then(() => repeat(value + 1)),
 ]);
