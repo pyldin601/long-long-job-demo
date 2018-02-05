@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://pldin601.github.io/long-long-job-demo",
   "dependencies": {
-    "long-long-job": "^0.1.4",
+    "long-long-job": "^1.0.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.1.0",

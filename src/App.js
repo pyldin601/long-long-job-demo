@@ -13,11 +13,8 @@ class App extends Component {
   }
 
   componentDidMount() {
-    counterJob.on('task', (cursor, state) => {
-      if (state !== undefined) {
-        const { fib, n } = state;
-        this.setState({ fib, n })
-      }
+    counterJob.on('fib', (fib, n) => {
+      this.setState({ fib, n });
     });
 
     counterJob.start();
